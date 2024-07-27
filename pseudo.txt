@@ -1,0 +1,32 @@
+Unifind: Unifind is an AI-integrated software whose purpose is to make university decisions easier to Highschool Graduates by using Google's Gemini 
+
+BACKEND
+
+routes:
+    - home (where the user will interact with the AI)
+    - universities/:id (contains university info)
+    - user/:id
+    - saved (saved uni)
+    - signup/login
+
+models:
+    - university model
+    - user model
+
+controllers:
+    - universityController.js
+    - userController.js
+    - authController.js
+
+utils:
+    - verifyUser.js
+
+FRONTEND
+
+routes:
+    - home
+    - navbar (side navbar)
+    - about
+    - signup
+    - login
+    - saved (saved unis)
