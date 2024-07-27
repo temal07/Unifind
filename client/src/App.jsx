@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import HomePage from './components/HomePage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import About from './pages/About';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/about' element={<About />}/>
       </Routes>
     </BrowserRouter>
   )
