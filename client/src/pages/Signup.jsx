@@ -1,10 +1,50 @@
 import React, { useState, useEffect } from 'react'
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
+import { useNavigate, Link } from 'react-router-dom';
+
 export default function Signup() {
   const [formData, setFormData] = useState({});
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleChange = () => {
-    return;
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.id]: e.target.value.trim()});
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.username || !formData.email || !formData.password) {
+      return setErrorMessage('Please Fill Out all the Fields!');
+    }
+
+    try {
+      setErrorMessage(null);
+      setLoading(true);
+
+      const res = await fetch('/api/auth/signup', {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      
+      if (data.success === false) {
+        return setErrorMessage(data.message);
+      }
+
+      setLoading(false);
+
+      if (res.ok) {
+        navigate('/login');
+      }
+
+    } catch (error) {
+      setLoading(false);
+      setErrorMessage(error.message);
+    }
   }
 
   return (
@@ -20,7 +60,7 @@ export default function Signup() {
       <div className='flex flex-col gap-10 w-full max-w-lg'>
         <h1 className='text-4xl font-radio-canada-big gradient-text flex'>Sign Up</h1>
         <div className='flex-1'>
-          <form className='flex flex-col gap-4'>
+          <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <Label value='Your username:' />
             <TextInput 
               type='text'
@@ -45,11 +85,25 @@ export default function Signup() {
               onChange={handleChange}
               className='w-full'
             />
+            <Button className='mt-4' type='submit' disabled={loading}>
+              Sign up
+            </Button>
           </form>
-          <Button className='mt-4'>
-            Sign up
-          </Button>
+          <div className="flex gap-4 border-t-2">
+            <span>Have an account?</span>
+            <Link to='/sign-in' className="text-blue-500">
+              Sign In
+            </Link>
+          </div>
         </div>
+        {/* use conditional rendering */}
+        {
+            errorMessage && (
+              <Alert className='mt-5' color='failure'>
+                {errorMessage}
+              </Alert>
+            )
+        }
       </div>
     </div>
   )

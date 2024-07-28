@@ -1,9 +1,49 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { signInFailure, signInStart, signInSuccess } from '../redux/user/userSlice';
 
 export default function Login() {
-  const handleChange = () => {
-    return;
+  const [formData, setFormData] = useState({});
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.id]: e.target.value.trim()});
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.email || !formData.password) {
+      return dispatch(signInFailure('Please Fill out all the fields'));
+    }
+
+    try {
+      dispatch(signInStart());
+
+      const res = await fetch('/api/auth/login', {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await res.json();
+  
+      if (data.success === false) {
+        return dispatch(signInFailure(data.message));
+      }
+  
+      if (res.ok) {
+        dispatch(signInSuccess(data));
+        navigate('/');
+      }
+    } catch (error) {
+      dispatch(signInFailure(error.message));
+    }
   }
 
   return (
@@ -16,15 +56,7 @@ export default function Login() {
       <div className='flex flex-col gap-10 w-full max-w-lg'>
         <h1 className='text-4xl font-radio-canada-big gradient-text flex'>Log In</h1>
         <div className='flex-1'>
-          <form className='flex flex-col gap-4'>
-            <Label value='Your username:' />
-            <TextInput 
-              type='text'
-              placeholder='Username:'
-              id='username'
-              onChange={handleChange}
-              className='w-full'
-            />
+          <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <Label value='Your email:' />
             <TextInput 
               type='email'
@@ -41,11 +73,32 @@ export default function Login() {
               onChange={handleChange}
               className='w-full'
             />
+            <Button className='mt-4' type='submit'>    
+              Log In
+            </Button>
           </form>
-          <Button className='mt-4'>    
-            Log In
-          </Button>
+          <div className="flex gap-4 border-t-2">
+            <span>Have an account?</span>
+            <Link to='/sign-in' className="text-blue-500">
+            {
+              loading ? (
+                              <>
+                                  <Spinner size='sm' />
+                                  <span className='pl-3'>Loading</span>
+                              </>
+              ) : 'Create an Account'
+            }
+            </Link>
+          </div>
         </div>
+          {/* use conditional rendering */}
+          {
+            errorMessage && (
+              <Alert className='mt-5' color='failure'>
+                {errorMessage}
+              </Alert>
+            )
+          }
       </div>
     </div>
   )

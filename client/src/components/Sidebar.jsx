@@ -2,9 +2,16 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Footer from './Footer.jsx';
+import { Dropdown, Avatar } from 'flowbite-react';
 
 export default function Sidebar() {
   const { currentUser } = useSelector((state) => state.user);
+
+  const handleSignOut = async (e) => {
+    e.preventDefault();
+
+    return;
+  }
 
   return (
     <div className="fixed top-0 left-0 h-full w-40 bg-red-800 text-white flex flex-col justify-between">

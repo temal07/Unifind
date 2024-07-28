@@ -18,7 +18,11 @@ controllers:
     - userController.js
     - authController.js
 
-utils:
+datasets:
+    https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json
+    https://www.kaggle.com/datasets/thedevastator/national-universities-rankings-explore-quality-t
+    
+utils: 
     - verifyUser.js
 
 FRONTEND

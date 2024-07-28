@@ -47,7 +47,7 @@ export const signin = async (req, res, next) => {
     const { email, password } = req.body;
 
     if (!email || !password || email === "" || password === "") {
-        return next(errorHandler(404, 'All Fields ae required'));
+        return next(errorHandler(404, 'All Fields are required'));
     }
 
     // try to log the user in using a
@@ -90,6 +90,6 @@ export const signin = async (req, res, next) => {
             message: `Signed in ${validUser.username} successfully!`
         });
     } catch (error) {
-        next(error);
+        next(errorHandler(error.statusCode, error.message));
     }
 }

@@ -21,6 +21,18 @@ app.use('/api/auth', authRoute);
 
 const path = 3000;
 
+// create an error handler middleware
+// (the 'success' key is used in the frontend);
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'Internal Server Error';
+    res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message,
+    }) 
+});
+
 app.listen(path, () => {
     console.log(`Server is up and listening on port ${path}`);
 });

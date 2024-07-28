@@ -30,13 +30,7 @@ const userSlice = createSlice({
             state.error = null;
             state.currentUser = null;
         },
-        // Update the number of blogs the user has
 
-        updateAmountOfBlog: (state, action) => {
-            if (state.currentUser) {
-                state.currentUser.amountOfBlog = action.payload;
-            }
-        }
     },
 });
 
@@ -45,7 +39,6 @@ export const {
     signInStart, 
     signInSuccess, 
     signOutSuccess, 
-    updateAmountOfBlog,
 } = userSlice.actions;
 
 export default userSlice.reducer;
