@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <div className='flex flex-col gap-5'>
+    <div className='flex flex-col gap-5 ml-5'>
       <Link to='/about' className='text-lg font-sm'>
         About Unifind
       </Link>

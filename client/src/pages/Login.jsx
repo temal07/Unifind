@@ -74,20 +74,20 @@ export default function Login() {
               className='w-full'
             />
             <Button className='mt-4' type='submit'>    
-              Log In
+              {
+                loading ? (
+                  <>
+                      <Spinner size='sm' />
+                      <span className='pl-3'>Loading</span>
+                  </>
+                ) : 'Log In'
+              }              
             </Button>
           </form>
           <div className="flex gap-4 border-t-2">
-            <span>Have an account?</span>
-            <Link to='/sign-in' className="text-blue-500">
-            {
-              loading ? (
-                              <>
-                                  <Spinner size='sm' />
-                                  <span className='pl-3'>Loading</span>
-                              </>
-              ) : 'Create an Account'
-            }
+            <span>Don't Have an account?</span>
+            <Link to='/signup' className="text-blue-500">
+              Sign Up
             </Link>
           </div>
         </div>

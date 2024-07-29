@@ -86,13 +86,20 @@ export default function Signup() {
               className='w-full'
             />
             <Button className='mt-4' type='submit' disabled={loading}>
-              Sign up
+            {
+                loading ? (
+                  <>
+                      <Spinner size='sm' />
+                      <span className='pl-3'>Loading</span>
+                  </>
+                ) : 'Sign Up'
+              }
             </Button>
           </form>
           <div className="flex gap-4 border-t-2">
             <span>Have an account?</span>
             <Link to='/sign-in' className="text-blue-500">
-              Sign In
+              Log in
             </Link>
           </div>
         </div>

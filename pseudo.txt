@@ -33,3 +33,4 @@ routes:
     - signup
     - login
     - saved (saved unis)
+    - search bar 
