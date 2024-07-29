@@ -19,9 +19,8 @@ controllers:
     - authController.js
 
 datasets:
-    https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json
-    https://www.kaggle.com/datasets/thedevastator/national-universities-rankings-explore-quality-t
-    
+    Intl https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json
+    Us+Locs https://www.kaggle.com/datasets/thedevastator/national-universities-rankings-explore-quality-t
 utils: 
     - verifyUser.js
 

@@ -1,0 +1,7 @@
+Mayank:
+- Iterate over univ.json, for each university put google search results into prompt for AI, then append each result individually
+ 
+
+
+Temir: 
+- Finish signout and work on generative stuff 
