@@ -18,14 +18,3 @@ export const generateResponse = async () => {
     const formatted_result = trimmed_result.replace(/`/g, '');
     fs.writeFileSync(fpath, formatted_result, 'utf8');
 }
-/*
-its gonna take a decade*/
-
-// Now we have to do this until we reach thousands of unis, right
-// what does this mean then?
-
-// but i had made an application with gemini before and i didn't see any character limitations
-// like it generated a whole paragraph when i typed something 
-//ok 
-
-// lets wait

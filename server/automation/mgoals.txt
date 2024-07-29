@@ -5,3 +5,5 @@ Mayank:
 
 Temir: 
 - Finish signout and work on generative stuff 
+- Help mayank access the website 
+- In the end, put everything together in a json format and send the json to the db

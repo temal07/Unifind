@@ -6,10 +6,8 @@ export const callGenerativeFunction = async (req, res, next) => {
         generateResponse();
         res.status(201).json({
             message: 'Data created successfully.'
-        })//try giving json in messa
+        })
     } catch (error) {
         next(errorHandler(error.statusCode, error.message));
     }
 }
-
-// i got an error wait thats a good sign

@@ -2,14 +2,6 @@ import GeminiResponse from "../models/geminiModel.js";
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { errorHandler } from "../utils/errorHandler.js";
 
-// yo mayank btw the gemini will function if you give it 
-// the prompt. To give it, Postman is a great option. 
-// no postman is an application for hhttp requests. 
-// Like instead of going to google and giving it the prompt, you
-// use postman to handle http requests
-
-// i'm confu
-
 export const generativeGeminiAI = async (req, res, next) => {
     const { prompt } = req.body;
 
