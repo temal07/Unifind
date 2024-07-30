@@ -78,9 +78,6 @@ export default function Sidebar() {
         {
           currentUser &&
           <>
-            <Link to='/' className='text-xl ml-5'>
-              Home
-            </Link>
             <Link to='#' className='text-xl ml-5'>
               Bookmarked
             </Link>

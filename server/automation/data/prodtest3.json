@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Massachusetts Institute of Technology",
+    "location": "Cambridge, MA",
+    "gpa": 4.68,
+    "ranking": {
+      "global": 1,
+      "country": 1,
+      "source": "US News & World Report"
+    },
+    "tuition": 48.452,
+    "sat_avg": 1580,
+    "acceptanceRate": 3.08,
+    "scholarship": true,
+    "website": "https://www.mit.edu/"
+  },
+  {
+    "name": "Stanford University",
+    "location": "Stanford, CA",
+    "gpa": 4.39,
+    "ranking": {
+      "global": 2,
+      "country": 2,
+      "source": "US News & World Report"
+    },
+    "tuition": 51.354,
+    "sat_avg": 1520,
+    "acceptanceRate": 3.95,
+    "scholarship": true,
+    "website": "https://www.stanford.edu/"
+  },
+  {
+    "name": "Harvard University",
+    "location": "Cambridge, MA",
+    "gpa": 4.18,
+    "ranking": {
+      "global": 3,
+      "country": 3,
+      "source": "US News & World Report"
+    },
+    "tuition": 47.750,
+    "sat_avg": 1515,
+    "acceptanceRate": 4.59,
+    "scholarship": true,
+    "website": "https://www.harvard.edu/"
+  },
+  {
+    "name": "California Institute of Technology",
+    "location": "Pasadena, CA",
+    "gpa": 4.14,
+    "ranking": {
+      "global": 4,
+      "country": 4,
+      "source": "US News & World Report"
+    },
+    "tuition": 52.800,
+    "sat_avg": 1540,
+    "acceptanceRate": 7.7,
+    "scholarship": true,
+    "website": "https://www.caltech.edu/"
+  },
+  {
+    "name": "University of Oxford",
+    "location": "Oxford, UK",
+    "gpa": 4.2,
+    "ranking": {
+      "global": 5,
+      "country": 1,
+      "source": "QS World University Rankings"
+    },
+    "tuition": 32.390,
+    "sat_avg": 1500,
+    "acceptanceRate": 17.5,
+    "scholarship": true,
+    "website": "https://www.ox.ac.uk/"
+  },
+  {
+    "name": "University of Cambridge",
+    "location": "Cambridge, UK",
+    "gpa": 4.1,
+    "ranking": {
+      "global": 6,
+      "country": 2,
+      "source": "QS World University Rankings"
+    },
+    "tuition": 33.850,
+    "sat_avg": 1490,
+    "acceptanceRate": 21.1,
+    "scholarship": true,
+    "website": "https://www.cam.ac.uk/"
+  },
+  {
+    "name": "ETH Zurich",
+    "location": "Zurich, Switzerland",
+    "gpa": 4.0,
+    "ranking": {
+      "global": 7,
+      "country": 1,
+      "source": "QS World University Rankings"
+    },
+    "tuition": 1.800,
+    "sat_avg": null,
+    "acceptanceRate": 22.3,
+    "scholarship": true,
+    "website": "https://www.ethz.ch/"
+  },
+  {
+    "name": "National University of Singapore",
+    "location": "Singapore",
+    "gpa": 4.0,
+    "ranking": {
+      "global": 8,
+      "country": 1,
+      "source": "QS World University Rankings"
+    },
+    "tuition": 30.780,
+    "sat_avg": 1480,
+    "acceptanceRate": 10.8,
+    "scholarship": true,
+    "website": "https://www.nus.edu.sg/"
+  }
+]

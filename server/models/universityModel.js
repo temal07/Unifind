@@ -30,28 +30,52 @@ const UniversitySchema = new mongoose.Schema({
     gpa: {
         type: Number,
         required: true, 
+        source: {
+            type: String,
+            required: true,
+        }
     },
     ranking: {
         type: Number,
         required: true,
+        source: {
+            type: String, 
+            required: true,
+        }
     },
     tuition: {
         type: Number,
         required: true,
+        source: {
+            type: String, 
+            required: true,
+        }
     },
     sat_avg: {
         type: Number,
         required: true,
+        source: {
+            type: String, 
+            required: true,
+        }
     },
     acceptanceRate: {
         type: Number,
         required: true, 
+        source: {
+            type: String, 
+            required: true,
+        }
     },
     scholarship: {
         type: Boolean,
         required: true,
+        source: {
+            type: String, 
+            required: true,
+        }
     }
-});
+}, { timestamps : true });
 
 const University = new mongoose.model('University', UniversitySchema);
 

@@ -2,6 +2,7 @@ import GeminiResponse from "../models/geminiModel.js";
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { errorHandler } from "../utils/errorHandler.js";
 
+
 export const generativeGeminiAI = async (req, res, next) => {
     const { prompt } = req.body;
 
