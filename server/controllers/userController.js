@@ -1,3 +1,6 @@
+import { errorHandler } from "../utils/errorHandler.js";
+import User from '../models/userModel.js';
+
 export const signout = async (req, res, next) => {
     try {
         // clear the access token we had generated 
@@ -8,4 +11,8 @@ export const signout = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+}
+
+export const updateUser = async (req, res, next) => {
+    return;
 }

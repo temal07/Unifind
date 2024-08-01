@@ -29,51 +29,38 @@ const UniversitySchema = new mongoose.Schema({
     },
     gpa: {
         type: Number,
-        required: true, 
-        source: {
-            type: String,
-            required: true,
-        }
+        required: true,
+        default: 0
     },
-    ranking: {
+    rankingGlobal: {
         type: Number,
         required: true,
-        source: {
-            type: String, 
-            required: true,
-        }
+        default: 0
+    },
+    rankingCountry: {
+        type: Number,
+        required: true, 
+        default: 0
     },
     tuition: {
         type: Number,
         required: true,
-        source: {
-            type: String, 
-            required: true,
-        }
+        default: 0
     },
     sat_avg: {
         type: Number,
         required: true,
-        source: {
-            type: String, 
-            required: true,
-        }
+        default: 0
     },
     acceptanceRate: {
         type: Number,
-        required: true, 
-        source: {
-            type: String, 
-            required: true,
-        }
+        required: true,
+        default: 0
     },
     scholarship: {
         type: Boolean,
         required: true,
-        source: {
-            type: String, 
-            required: true,
-        }
+        default: false
     }
 }, { timestamps : true });
 

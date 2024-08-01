@@ -4,6 +4,12 @@ import HomePage from './components/HomePage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import About from './pages/About';
+import Profile from './pages/Profile';
+import AccountInfo from './components/AccountInfo';
+import BasicInfo from './components/BasicInfo';
+import Interests from './components/Interests';
+import AcademicSituation from './components/AcademicSituation';
+import DreamtUnis from './components/DreamtUnis';
 
 function App() {
   return (
@@ -14,6 +20,13 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />}/>
+        <Route path='/profile/:userId' element={<Profile />}>
+          <Route path='accountInfo' element={<AccountInfo />} />
+          <Route path='basicInfo' element={<BasicInfo />} />
+          <Route path='interests' element={<Interests />} />
+          <Route path='academicSituation' element={<AcademicSituation />} />
+          <Route path='dreamtUnis' element={<DreamtUnis />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
