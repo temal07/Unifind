@@ -1,5 +1,5 @@
 import express from 'express';
-import { call } from '../controllers/geminiController.js';
+import { generativeGeminiAI } from '../controllers/geminiController.js';
 
 const gemini_router = express.Router();
 

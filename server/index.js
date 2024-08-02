@@ -6,7 +6,8 @@ import authRoute from './routes/authRoute.js';
 import automationRoute from './routes/automationRoute.js';
 import userRoute from './routes/userRoute.js';
 import jsonRouteV3 from './routes/jsonRouteV3.js';
-// import geminiRoute from './routes/geminiRoute.js';
+import geminiRoute from './routes/geminiRoute.js';
+
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
@@ -24,7 +25,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/legacy', automationRoute);
 app.use('/api/user', userRoute);
 app.use('/api/automationv3', jsonRouteV3);
-// app.use('/api/gemini', geminiRoute);
+app.use('/api/gemini', geminiRoute);
 
 const path = 3000;
 

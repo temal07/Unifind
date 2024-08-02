@@ -88,7 +88,7 @@ export const generateQuery = async (query) => {
 
     const queryData = '';
     universityFields.forEach(async (field) => {
-        const queryData = queryData + 
+        queryData + 
             await cleanBingApi(
                 `https://www.bing.com/search?q=${encodeURIComponent(`${query} average ${field}`)}`,
                 field
@@ -123,7 +123,6 @@ async function insertUniversity(csvString) {
     return savedUniversity;
     } catch (error) {
     console.error('Error saving university:', error);
-    throw error;
     }
 }
 
@@ -148,7 +147,7 @@ export const promptGemini = async (query) => {
     const model = genAI.getGenerativeModel({ model: 'gemini-pro'});
 
     const result = await model.generateContent(optimalQuery);
-    const result_text = await result.response.text();
+    const result_text = result.response.text();
     const trimmed_result = result_text.trim();
     const formatted_result = trimmed_result.replace(/`/g, '');
     
