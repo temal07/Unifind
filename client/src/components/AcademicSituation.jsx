@@ -7,33 +7,41 @@ export default function AcademicSituation() {
   return (
     <div className='flex flex-col gap-5'>
       <div className='text-gray-400'>
-        <h1 className='text-2xl'>Account Info for {currentUser.username}</h1>
+        <h1 className='text-2xl'>Academic Situation for {currentUser.username}</h1>
       </div>
       <hr className='w-3/4' />
       {/* Info */}
       <div className='flex flex-col gap-5'>
         <div className='flex gap-1'>
           <div className=''>
-            Username:
+            GPA:
           </div>
           <div className=''>
-            { currentUser.username }
-          </div>
-        </div>
-        <div className='flex gap-1'>
-          <div className=''>
-            Email:
-          </div>
-          <div className=''>
-            { currentUser.email }
+            { currentUser.academicSituation.gpa }
           </div>
         </div>
         <div className='flex gap-1'>
           <div className=''>
-            Date Joined:
+            ACT Score:
           </div>
           <div className=''>
-            { new Date(currentUser.createdAt).toLocaleString() }
+            { currentUser.academicSituation.actScore }
+          </div>
+        </div>
+        <div className='flex gap-1'>
+          <div className=''>
+            SAT Score:
+          </div>
+          <div className=''>
+            { currentUser.academicSituation.satScore }
+          </div>
+        </div>
+        <div className='flex gap-1'>
+          <div className=''>
+            Extracurriculars:
+          </div>
+          <div className=''>
+            { currentUser.academicSituation.extraCurriculars }
           </div>
         </div>
       </div>

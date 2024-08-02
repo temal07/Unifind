@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 export default function BasicInfo() {
@@ -14,26 +14,34 @@ export default function BasicInfo() {
       <div className='flex flex-col gap-5'>
         <div className='flex gap-1'>
           <div className=''>
-            Username:
+            Residency:
           </div>
           <div className=''>
-            { currentUser.username }
-          </div>
-        </div>
-        <div className='flex gap-1'>
-          <div className=''>
-            Email:
-          </div>
-          <div className=''>
-            { currentUser.email }
+            { currentUser.basicInfo.residency }
           </div>
         </div>
         <div className='flex gap-1'>
           <div className=''>
-            Date Joined:
+            Current Grade:
           </div>
           <div className=''>
-            { new Date(currentUser.createdAt).toLocaleString() }
+            { currentUser.basicInfo.currentGrade }
+          </div>
+        </div>
+        <div className='flex gap-1'>
+          <div className=''>
+            Financial Situation:
+          </div>
+          <div className=''>
+            { currentUser.basicInfo.financialSituation }
+          </div>
+        </div>
+        <div className='flex gap-1'>
+          <div className=''>
+            Description of the User:
+          </div>
+          <div className=''>
+            { currentUser.basicInfo.description }
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInFailure, signInStart, signInSuccess } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 export default function Login() {
   const [formData, setFormData] = useState({});
@@ -83,8 +84,9 @@ export default function Login() {
                 ) : 'Log In'
               }              
             </Button>
+            <OAuth />
           </form>
-          <div className="flex gap-4 border-t-2">
+          <div className="flex gap-4 border-t-2 mb-20 mt-5">
             <span>Don't Have an account?</span>
             <Link to='/signup' className="text-blue-500">
               Sign Up
