@@ -27,7 +27,7 @@ const UniversitySchema = new mongoose.Schema({
         type: String, 
         required: true,        
     },
-    gpa: {
+    averageGPA: {
         type: Number,
         required: true,
         default: 0
@@ -47,7 +47,7 @@ const UniversitySchema = new mongoose.Schema({
         required: true,
         default: 0
     },
-    sat_avg: {
+    satAverage: {
         type: Number,
         required: true,
         default: 0

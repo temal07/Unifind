@@ -95,7 +95,8 @@ export const generateQuery = async (query) => {
             );
     });
 
-    const finalQuery = initialQuery + '\n Here is the data provided for research as follows: \n' + data;
+    const finalQuery = initialQuery + '\n Here is the data provided for research as follows: \n' + queryData;
+    return finalQuery;
 }
 
 // MongoDB Import Specific Function

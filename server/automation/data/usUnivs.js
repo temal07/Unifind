@@ -1,6 +1,23 @@
 // Data containing universities of the United States
 
 export const universities = [
+    "Massachusetts Institute of Technology (MIT)",
+    "Harvard University",
+    "Stanford University",
+    "University of California Berkeley (UCB)",
+    "University of Chicago",
+    "University of Pennsylvania",
+    "Cornell University",
+    "California Institute of Technology (Caltech)",
+    "Yale University",
+    "Princeton University",
+    "Columbia University",
+    "Johns Hopkins University",
+    "University of California, Los Angeles (UCLA)",
+    "University of Michigan-Ann Arbor",
+    "New York University (NYU)",
+    "Northwestern University",
+    "Carnegie Mellon University",
     "Duke University",
     "University of Texas at Austin",
     "University of California, San Diego (UCSD)",
