@@ -27,7 +27,9 @@ export default function Profile() {
         <div className='flex flex-col md:flex-row gap-5'>
             {/* Buttons for updating/deleting the user */}
             <Button gradientMonochrome={'success'} className='w-40'>
-                Update Your Profile
+                <Link to='updateUser'>
+                    Update Your Profile
+                </Link>
             </Button>
             <Button gradientMonochrome={'failure'} className='w-40'>
                 Delete Account

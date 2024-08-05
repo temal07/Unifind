@@ -8,7 +8,7 @@ export const verifyUser  = async (req, res, next) => {
         return next(errorHandler(401, 'Unauthorized'));
     }
 
-    jwt.verify(toekn, process.env.JWT_TOKEN, (err, user) => {
+    jwt.verify(token, process.env.JWT_TOKEN, (err, user) => {
         if (err) {
             return next(errorHandler(401, 'Unauthorized'));
         }

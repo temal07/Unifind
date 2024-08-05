@@ -10,6 +10,7 @@ import BasicInfo from './components/BasicInfo';
 import Interests from './components/Interests';
 import AcademicSituation from './components/AcademicSituation';
 import DreamtUnis from './components/DreamtUnis';
+import UpdateUser from './pages/UpdateUser';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='academicSituation' element={<AcademicSituation />} />
           <Route path='dreamtUnis' element={<DreamtUnis />} />
         </Route>
+        <Route path='/profile/:userId/updateUser' element={<UpdateUser />} />
       </Routes>
     </BrowserRouter>
   )

@@ -105,7 +105,7 @@ export const google = async (req, res, next) => {
         if (user) {
             // show the google photo regardless of whether the user signed in
             // or signed up.
-            user.profilePicture = googlePhotoUrl;
+            user.profilePicture = googlePhotoURL;
             await user.save();
 
             // generate a token if the user exists
