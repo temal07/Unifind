@@ -154,6 +154,6 @@ export const google = async (req, res, next) => {
             }).json(rest);
         }
     } catch (error) {
-        
+        next(errorHandler(error.statusCode, error.message));
     }
 }

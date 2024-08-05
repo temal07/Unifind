@@ -18,6 +18,8 @@ export const updateUser = async (req, res, next) => {
     // Specific requirements must be met in order for the
     // person to update their profile
 
+    console.log(req.body);
+
     if (req.user.id !== req.params.userId) {
         return next(errorHandler(403, 'You are not allowed to update this user.'));
     } 

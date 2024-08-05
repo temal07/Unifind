@@ -81,6 +81,9 @@ export default function Sidebar() {
             <Link to='#' className='text-xl ml-5'>
               Bookmarked
             </Link>
+            <Link to={`/settings/${currentUser._id}`} className='text-xl ml-5'>
+              Settings ⚙️
+            </Link>
             {/* Search Bar */}
           <form className='flex justify-center pl-5 pr-5'>
             <TextInput 

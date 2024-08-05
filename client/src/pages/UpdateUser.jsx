@@ -24,7 +24,7 @@ export default function UpdateUser() {
                 username: currentUser.username || '',
                 email: currentUser.email || '',
                 profilePicture: currentUser.profilePicture || '',
-                password: '', // Typically, you don't pre-fill passwords for security reasons
+                password: '',
                 residency: currentUser.basicInfo.residency || '',
                 currentGrade: currentUser.basicInfo.currentGrade || '',
                 financialSituation: currentUser.basicInfo.financialSituation || '',

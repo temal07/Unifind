@@ -11,6 +11,8 @@ import Interests from './components/Interests';
 import AcademicSituation from './components/AcademicSituation';
 import DreamtUnis from './components/DreamtUnis';
 import UpdateUser from './pages/UpdateUser';
+import Settings from './pages/Settings';
+import DeleteUser from './pages/DeleteUser';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path='dreamtUnis' element={<DreamtUnis />} />
         </Route>
         <Route path='/profile/:userId/updateUser' element={<UpdateUser />} />
+        <Route path='/settings/:userId' element={<Settings />} />
+        <Route path='/profile/:userId/deleteUser' element={<DeleteUser />} />
       </Routes>
     </BrowserRouter>
   )

@@ -1,13 +1,19 @@
-import { Button, Navbar } from 'flowbite-react';
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Button, Modal, Navbar } from 'flowbite-react';
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { deleteUserFailure, deleteUserStart, deleteUserSuccess } from '../redux/user/userSlice';
+import { HiOutlineExclamationCircle } from 'react-icons/hi';
 
 export default function Profile() {
+    const [userDeletedError, setUserDeletedError] = useState(null);
     const { currentUser } = useSelector((state) => state.user);
     const path = useLocation().pathname;
+    const [showModal, setShowModal] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const baseRoute = `/profile/${currentUser._id}`
+    const baseRoute = `/profile/${currentUser._id}`;
 
   return (
     <div className='flex flex-col gap-5 ml-52'>
@@ -23,17 +29,6 @@ export default function Profile() {
             <div className='flex pt-5 md:pt-16'>
                 <h1 className='text-6xl'>{ currentUser.username }</h1>
             </div>
-        </div>
-        <div className='flex flex-col md:flex-row gap-5'>
-            {/* Buttons for updating/deleting the user */}
-            <Button gradientMonochrome={'success'} className='w-40'>
-                <Link to='updateUser'>
-                    Update Your Profile
-                </Link>
-            </Button>
-            <Button gradientMonochrome={'failure'} className='w-40'>
-                Delete Account
-            </Button>
         </div>
         <hr className="border-0 bg-gray-400 h-0.5 w-9/12 mx-0 my-0" />
         <div className=''>
