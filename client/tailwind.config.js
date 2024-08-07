@@ -13,6 +13,7 @@ export default {
       fontFamily: {
         'radio-canada-big': ['Radio Canada Big', ...defaultTheme.fontFamily.sans],
         'rammetto-one': ['Rammetto One', ...defaultTheme.fontFamily.sans],
+        'poppins': ['Poppins', ...defaultTheme.fontFamily.sans],
       },
     },
   },
