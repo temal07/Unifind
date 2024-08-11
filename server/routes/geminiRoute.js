@@ -6,5 +6,3 @@ const gemini_router = express.Router();
 gemini_router.post('/generate-res', generativeGeminiAI);
 
 export default gemini_router;
-
-// i can create one it's simple

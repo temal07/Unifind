@@ -14,7 +14,7 @@ export default function CallToAction() {
             Check out our AI chat assistant built with Gemini
           </p>
           <Button gradientDuoTone='purpleToPink' className='rounded-tl-xl rounded-bl-none'>
-            <Link to='#'>
+            <Link to='/recommendation'>
               Find My University    
             </Link>
           </Button>

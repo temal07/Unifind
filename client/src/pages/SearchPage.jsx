@@ -108,7 +108,7 @@ export default function SearchPage() {
           </form>
         </div>
         <div className="w-full">
-          <h1 className="text-3xl font-semibold font-poppins">Search Results:</h1>
+          <h1 className="text-3xl font-semibold font-poppins mt-10">Search Results:</h1>
           <div className='p-7 flex flex-wrap gap-4'>
             {!loading && univs.length === 0 && (
               <p className='text-xl text-gray-500'>No Universities Found.</p>

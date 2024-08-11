@@ -98,7 +98,7 @@ export default function Sidebar() {
         {
           currentUser &&
           <>
-            <Link to='#' className='text-xl ml-5'>
+            <Link to='/recommendation' className='text-xl ml-5'>
               Chat to AI
             </Link>
             <Link to={`/settings/${currentUser._id}`} className='text-xl ml-5'>
