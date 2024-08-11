@@ -45,7 +45,8 @@ export default function About() {
                   with AI-generated insights to guide your decision-making process.
                   We created Unifind because we believed that no one has used AI (models)
                   to help students with their college decisions and thought it was a good use-case
-                  of AI to capitalize upon.
+                  of AI to capitalize upon. Keep in mind, Gemini WILL NOT interfere with your actual college application, it's
+                  just going to act as a tool for guidance.
                 </p>
               )}
             </li>
@@ -72,11 +73,18 @@ export default function About() {
                 <span className="font-bold text-2xl">How does Unifind exactly work?</span>
               </div>
               {openQuestion === 3 && (
-                <p className="ml-6 mt-2 max-w-2xl">
-                  Users are able to open an account, edit their information and ask
-                  Gemini to choose universities based on their information. The information
-                  Gemini will consider are mostly your financial situation and academic status
-                </p>
+                <>
+                  <p className="ml-6 mt-2 max-w-2xl">
+                    Here is how exactly Unifind works: 
+                  </p>
+                  <ul className='list-disc pl-20'>
+                      <li>Users are greeted with a welcome page when they first visit the website</li>
+                      <li>Users create an account/sign into their account</li>
+                      <li>The home page greets them with a call to action cards</li>
+                      <li>Users can search universities and gain insight about them. Unifind currently contains 172 universities</li>
+                      <li>Users can search up other users and get to know them. Users will not be able to edit other user's profiles</li>
+                  </ul>
+                </>
               )}
             </li>
           </ul>
