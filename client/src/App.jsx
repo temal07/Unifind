@@ -13,6 +13,8 @@ import DreamtUnis from './components/DreamtUnis';
 import UpdateUser from './pages/UpdateUser';
 import Settings from './pages/Settings';
 import DeleteUser from './pages/DeleteUser';
+import SearchPage from './pages/SearchPage';
+import UnivPage from './pages/UnivPage';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />}/>
+        <Route path='/search' element={<SearchPage />} />
         <Route path='/profile/:userId' element={<Profile />}>
           <Route path='accountInfo' element={<AccountInfo />} />
           <Route path='basicInfo' element={<BasicInfo />} />
@@ -33,6 +36,7 @@ function App() {
         <Route path='/profile/:userId/updateUser' element={<UpdateUser />} />
         <Route path='/settings/:userId' element={<Settings />} />
         <Route path='/profile/:userId/deleteUser' element={<DeleteUser />} />
+        <Route path='/university/:universityId' element={<UnivPage />} />
       </Routes>
     </BrowserRouter>
   )

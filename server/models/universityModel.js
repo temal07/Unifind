@@ -3,15 +3,14 @@
 /*
     universityModel = {
         name: String, 
-        location: String, <later consider 2int arr>
+        location: String,
         gpa: float,
         ranking: Number,
         tuition: Number,
         sat_avg: Number,
         acceptanceRate: Number
         scholarship: Boolean,
-         ye i think that's it.
-    }ye coz we might need it later 
+    }
 */
 
 

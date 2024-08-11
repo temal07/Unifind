@@ -94,6 +94,7 @@ export default function UpdateUser() {
                 act: currentUser.academicSituation.actScore || '',
                 sat: currentUser.academicSituation.satScore || '',
                 extraCurriculars: currentUser.academicSituation.extraCurriculars || '',
+                dreamtUnis: currentUser.dreamtUnis || '',
             });
         }
     }, [currentUser]);
@@ -331,6 +332,19 @@ export default function UpdateUser() {
                             className='flex-1 w-72'
                             onChange={handleChange}
                             value={formData.extraCurriculars}
+                        />
+                        <div className="">
+                            <h1 className='text-xl text-gray-400'>Dreamt Universities</h1>
+                        </div>
+                        <hr className="border-0 bg-gray-400 h-0.5 w-9/12 mx-0 my-0" />
+                        <TextInput 
+                            type='text'
+                            placeholder='Please List Your Dream Universities if you have...'
+                            required
+                            id='dreamtUnis'
+                            className='flex-1 w-72'
+                            onChange={handleChange}
+                            value={formData.dreamtUnis}
                         />
                     </div>
                     <Button className='mb-10' type='submit' gradientDuoTone={'purpleToBlue'}>

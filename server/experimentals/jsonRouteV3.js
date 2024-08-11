@@ -1,5 +1,5 @@
 import express from 'express';
-import { callGenerativeFunction } from '../controllers/jsonControllerV3.js';
+import { callGenerativeFunction } from '../experimentals/jsonControllerV3.js';
 
 const router = express.Router();
 

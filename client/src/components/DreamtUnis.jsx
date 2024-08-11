@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 export default function DreamtUnis() {
@@ -12,7 +12,14 @@ export default function DreamtUnis() {
       <hr className='w-3/4' />
       {/* Info */}
       <div className='flex flex-col gap-5'>
-        
+        <div className='flex gap-1'>
+          <div className=''>
+            Dreamt Universities:
+          </div>
+          <div className=''>
+            { currentUser.dreamtUnis }
+          </div>
+        </div>
       </div>
     </div>
   )

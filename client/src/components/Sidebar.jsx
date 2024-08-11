@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Footer from './Footer.jsx';
@@ -11,6 +11,18 @@ export default function Sidebar() {
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Ensure useNavigate is imported and used
   const path = useLocation().pathname;
+  const location = useLocation();
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromURL = urlParams.get('q');
+
+    if (searchTermFromURL) {
+      setSearchTerm(searchTermFromURL);
+    }
+  }, [location.search]);
 
   const handleSignOut = async () => {
     try {
@@ -29,6 +41,14 @@ export default function Sidebar() {
       console.log('Error signing out:', error);
     }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(location.search);
+    urlParams.set('q', searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`search?${searchQuery}`);
+  }
 
   return (
     <div className="fixed top-0 left-0 h-full w-40 bg-red-800 text-white flex flex-col justify-between">
@@ -79,18 +99,20 @@ export default function Sidebar() {
           currentUser &&
           <>
             <Link to='#' className='text-xl ml-5'>
-              Bookmarked
+              Chat to AI
             </Link>
             <Link to={`/settings/${currentUser._id}`} className='text-xl ml-5'>
               Settings ⚙️
             </Link>
             {/* Search Bar */}
-          <form className='flex justify-center pl-5 pr-5'>
+          <form onSubmit={handleSubmit} className='flex justify-center pl-5 pr-5'>
             <TextInput 
               type='text'
               placeholder='Search Universities'
               rightIcon={AiOutlineSearch}
               className='hidden lg:inline'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </form>
           <Button className='w-12 h-10 lg:hidden sm:ml-10' color='gray' pill>

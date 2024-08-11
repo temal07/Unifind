@@ -73,6 +73,7 @@ export const updateUser = async (req, res, next) => {
                     "basicInfo.currentGrade": req.body.currentGrade,
                     "basicInfo.financialSituation": req.body.financialSituation,
                     "basicInfo.description": req.body.description,
+                    "dreamtUnis": req.body.dreamtUnis,
                 },
             },
             { new: true }

@@ -21,7 +21,7 @@ import { Options as ChromeOptions } from 'selenium-webdriver/chrome.js';//i thin
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { universities } from './data/usUnivs.js';
 import fs from 'fs';
-import University2 from '../models/jsonModelV3.js';
+import University2 from '../experimentals/jsonModelV3.js';
 // Function to clean Bing API results
 export const cleanBingApi = async (uriRequest, field) => {
     // Set up headless mode options
