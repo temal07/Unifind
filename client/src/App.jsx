@@ -16,6 +16,8 @@ import DeleteUser from './pages/DeleteUser';
 import SearchPage from './pages/SearchPage';
 import UnivPage from './pages/UnivPage';
 import Recommendation from './pages/Recommendation';
+import UserSearch from './pages/UserSearch';
+import UserProfile from './pages/UserProfile';
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
         <Route path='/profile/:userId/deleteUser' element={<DeleteUser />} />
         <Route path='/university/:universityId' element={<UnivPage />} />
         <Route path='/recommendation' element={<Recommendation />} />
+        <Route path='/search-users' element={<UserSearch />} />
+        <Route path='/user/:userId' element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   )

@@ -22,8 +22,6 @@ export const getUniversities = async (req, res, next) => {
       query.$or = [{ name: { $regex: req.query.searchTerm, $options: 'i' } }];
     }
 
-    const filters = {};
-
     const {
       q,
     } = req.query;

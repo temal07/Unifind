@@ -113,3 +113,54 @@ export const getUser = async (req, res, next) => {
         return next(errorHandler(error.statusCode, error.message));
     }
 }   
+
+export const getUsers = async (req, res, next) => {
+    try {
+        const startIndex = parseInt(req.query.startIndex) || 0;
+        const limit = parseInt(req.query.limit) || 7;
+        const sortDirection = req.query.sort === 'asc' ? 1 : -1;
+
+        const query = {};
+
+        if (req.query.searchTerm) {
+            query.$or = [
+                { name: { $regex: req.query.searchTerm, $options: 'i' } },
+                { username: { $regex: req.query.searchTerm, $options: 'i' } },
+            ];
+        }
+
+        const users = await User.find(query)
+        .sort({ createdAt: sortDirection })
+        .skip(startIndex)
+        .limit(limit);
+
+        const usersWithoutPassword = users.map((user) => {
+            const { password, ...rest } = user._doc;
+            return rest;
+        });
+
+        // Total users matching the search query
+        const totalUsers = await User.countDocuments(query);
+
+        const now = new Date();
+        const oneMonthAgo = new Date(
+            now.getFullYear(),
+            now.getMonth() - 1,
+            now.getDate()
+        );
+
+        // Users created in the last month matching the search query
+        const lastMonthUsers = await User.countDocuments({
+            ...query,
+            createdAt: { $gte: oneMonthAgo },
+        });
+
+        res.status(200).json({
+            users: usersWithoutPassword,
+            totalUsers,
+            lastMonthUsers,
+        });
+    } catch (error) {
+        next(errorHandler(error.statusCode, error.message));
+    }
+}
