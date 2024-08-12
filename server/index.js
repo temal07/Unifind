@@ -24,6 +24,9 @@ const app = express();
 
 const joinedPath = path.join(__dirname, 'client', 'dist', 'index.html');
 
+
+const PATH = 3000;
+
 app.listen(PATH, () => {
     console.log(`Server is up and listening on port ${path}`);
     console.log(joinedPath);
@@ -40,8 +43,6 @@ app.use('/api/user', userRoute);
 // app.use('/api/automationv3', jsonRouteV3);
 app.use('/api/gemini', geminiRoute);
 app.use('/api/univs', universityRoute);
-
-const PATH = 3000;
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
