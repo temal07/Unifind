@@ -8,6 +8,7 @@ import userRoute from './routes/userRoute.js';
 import jsonRouteV3 from './experimentals/jsonRouteV3.js';
 import geminiRoute from './routes/geminiRoute.js';
 import universityRoute from './routes/universityRoute.js';
+import path from 'path';
 
 dotenv.config();
 
@@ -17,7 +18,16 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log(err);
 });
 
+const __dirname = path.resolve();
+
 const app = express();
+
+const joinedPath = path.join(__dirname, 'client', 'dist', 'index.html');
+
+app.listen(PATH, () => {
+    console.log(`Server is up and listening on port ${path}`);
+    console.log(joinedPath);
+});
 
 // Middleware
 app.use(express.json());
@@ -31,7 +41,13 @@ app.use('/api/user', userRoute);
 app.use('/api/gemini', geminiRoute);
 app.use('/api/univs', universityRoute);
 
-const path = 3000;
+const PATH = 3000;
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 // create an error handler middleware
 // (the 'success' key is used in the frontend);
@@ -43,8 +59,4 @@ app.use((err, req, res, next) => {
         statusCode,
         message,
     }) 
-});
-
-app.listen(path, () => {
-    console.log(`Server is up and listening on port ${path}`);
 });
