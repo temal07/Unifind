@@ -25,10 +25,10 @@ const app = express();
 const joinedPath = path.join(__dirname, 'client', 'dist', 'index.html');
 
 
-const PATH = 3000;
+const port = process.env.PORT;
 
-app.listen(PATH, () => {
-    console.log(`Server is up and listening on port ${path}`);
+app.listen(port, () => {
+    console.log(`Server is up and listening on port ${port}`);
     console.log(joinedPath);
 });
 
